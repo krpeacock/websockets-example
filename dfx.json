@@ -1,35 +1,24 @@
 {
   "canisters": {
-    "websockets_backend": {
-      "main": "src/websockets_backend/main.mo",
-      "type": "motoko"
+    "event_stack": {
+      "main": "src/event_stack/main.mo",
+      "type": "motoko",
+      "declarations": {
+        "node_compatibility": true
+      }
     },
-    "websockets_frontend": {
+    "frontend": {
       "dependencies": [
-        "websockets_backend"
+        "event_stack"
       ],
       "frontend": {
-        "entrypoint": "src/websockets_frontend/src/index.html"
+        "entrypoint": "src/frontend/src/index.html"
       },
       "source": [
-        "src/websockets_frontend/assets",
-        "dist/websockets_frontend/"
+        "src/frontend/assets",
+        "dist/frontend/"
       ],
       "type": "assets"
     }
-  },
-  "defaults": {
-    "build": {
-      "args": "",
-      "packtool": ""
-    }
-  },
-  "dfx": "0.9.1-297-g6a446f58",
-  "networks": {
-    "local": {
-      "bind": "127.0.0.1:8000",
-      "type": "ephemeral"
-    }
-  },
-  "version": 1
+  }
 }
