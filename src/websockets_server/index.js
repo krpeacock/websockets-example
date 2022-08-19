@@ -1,10 +1,12 @@
 import { createActor, canisterId } from "../declarations/event_stack/index";
+import fetch from "isomorphic-fetch";
 import { WebSocketServer, WebSocket } from "ws";
 import { TextEncoder } from "util";
 
 const event_stack = createActor(canisterId, {
   agentOptions: {
     host: "http://127.0.0.1:8000",
+    fetch,
   },
 });
 

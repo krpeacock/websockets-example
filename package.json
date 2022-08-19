@@ -11,11 +11,8 @@
   ],
   "scripts": {
     "build": "webpack",
-    "prebuild": "npm run generate",
     "start:client": "parcel src/frontend/src/index.html",
-    "prestart:server": "npm run generate; node setupEnv.cjs",
     "start:server": "NODE_ENV=development nodemon -r dotenv/config --es-module-specifier-resolution=node src/websockets_server/index.js",
-    "prestart": "npm run generate",
     "generate": "dfx-dev generate event_stack"
   },
   "devDependencies": {
@@ -28,6 +25,7 @@
     "crypto-browserify": "^3.12.0",
     "events": "3.3.0",
     "html-webpack-plugin": "5.5.0",
+    "nodemon": "^2.0.19",
     "parcel": "^2.7.0",
     "process": "0.11.10",
     "querystring-es3": "^0.2.1",
@@ -54,6 +52,7 @@
     "browser-websocket": "^2.2.0",
     "dotenv": "^16.0.1",
     "fs": "^0.0.1-security",
+    "isomorphic-fetch": "^3.0.0",
     "path-browserify": "^1.0.1",
     "socket.io": "^4.5.1",
     "ws": "^8.8.1"
